@@ -15,16 +15,16 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route element="{<Login" path="/login"/>} />
-        <Route element="{<ProtectedRoute" path="/dashboard"><Dashboard/></ProtectedRoute>} />
-        <Route element="{<ProtectedRoute" path="/subjects"><Subjects/></ProtectedRoute>} />
-        <Route element="{<ProtectedRoute" path="/assignments"><Assignments/></ProtectedRoute>} />
-        <Route element="{<ProtectedRoute" path="/quizzes"><Quizzes/></ProtectedRoute>} />
-        <Route element="{<ProtectedRoute" path="/attendance"><Attendance/></ProtectedRoute>} />
-        <Route element="{<ProtectedRoute" path="/calendar"><CalendarEvents/></ProtectedRoute>} />
-        <Route element="{<ProtectedRoute" path="/reports"><Reports/></ProtectedRoute>} />
-        <Route element="{<ProtectedRoute" path="/ai-assistant"><AIAssistant/></ProtectedRoute>} />
-        <Route element="{<Navigate" path="*" replace to="/login"/>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/subjects" element={<ProtectedRoute><Subjects /></ProtectedRoute>} />
+        <Route path="/assignments" element={<ProtectedRoute><Assignments /></ProtectedRoute>} />
+        <Route path="/quizzes" element={<ProtectedRoute><Quizzes /></ProtectedRoute>} />
+        <Route path="/attendance" element={<ProtectedRoute><Attendance /></ProtectedRoute>} />
+        <Route path="/calendar" element={<ProtectedRoute><CalendarEvents /></ProtectedRoute>} />
+        <Route path="/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} />
+        <Route path="/ai-assistant" element={<ProtectedRoute><AIAssistant /></ProtectedRoute>} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>
   );
