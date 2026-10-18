@@ -10,10 +10,8 @@ app.use(express.json());
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
 // Database Connection
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/clever-school-portal', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => console.log('MongoDB Connected Successfully'))
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/clever-school-portal')
+  .then(() => console.log('MongoDB Connected Successfully'))
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes Registration
